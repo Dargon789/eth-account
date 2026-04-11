@@ -6,7 +6,7 @@ toolchain go1.24.10
 
 require (
 	github.com/crate-crypto/go-eth-kzg v1.4.0
-	github.com/ethereum/go-ethereum v1.16.7
+	github.com/ethereum/go-ethereum v1.17.0
 	github.com/holiman/uint256 v1.3.2
 	gopkg.in/yaml.v3 v3.0.1
 )
@@ -16,7 +16,6 @@ require (
 	github.com/bits-and-blooms/bitset v1.20.0 // indirect
 	github.com/consensys/gnark-crypto v0.18.1 // indirect
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.0.1 // indirect
-	golang.org/x/crypto v0.45.0 // indirect
-	golang.org/x/sync v0.12.0 // indirect
-	golang.org/x/sys v0.38.0 // indirect
+	golang.org/x/sync v0.18.0 // indirect
+	golang.org/x/sys v0.39.0 // indirect
 )
