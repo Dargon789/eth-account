@@ -1,9 +1,8 @@
-from typing import (
-    List,
-)
-
 from eth_keys.datatypes import (
     Signature,
+)
+from eth_utils import (
+    CamelModel,
 )
 from hexbytes import (
     HexBytes,
@@ -13,7 +12,6 @@ from pydantic import (
 )
 
 from eth_account.datastructures import (
-    CustomPydanticModel,
     SignedSetCodeAuthorization,
 )
 
@@ -45,15 +43,15 @@ PYDANTIC_TEST_CLASS_JSON = {
 }
 
 
-class PydanticTestClassInner(CustomPydanticModel):
+class PydanticTestClassInner(CamelModel):
     int_value: int = 2
     str_value: str = "3"
-    authorization_list: List[SignedSetCodeAuthorization] = [TEST_SIGNED_AUTHORIZATION]
+    authorization_list: list[SignedSetCodeAuthorization] = [TEST_SIGNED_AUTHORIZATION]
     excluded_field1: str = Field(default="4", exclude=True)
     excluded_field2: int = Field(default=5, exclude=True)
 
 
-class PydanticTestClass(CustomPydanticModel):
+class PydanticTestClass(CamelModel):
     int_value: int = 1
     nested_model: PydanticTestClassInner = PydanticTestClassInner()
     excluded_field1: str = Field(default="6", exclude=True)
